@@ -5,18 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UdemyCarBook.Application.Features.Mediator.Queries.LocationQueries;
-using UdemyCarBook.Application.Features.Mediator.Results.FeatureResult;
 using UdemyCarBook.Application.Features.Mediator.Results.LocationResults;
 using UdemyCarBook.Application.Interfaces;
 using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.LocationHandlers
 {
-    public class GetPricingByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
+    public class GetLocationByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
     {
         private readonly IRepository<Location> _repository;
-
-        public GetPricingByIdQueryHandler(IRepository<Location> repository)
+        public GetLocationByIdQueryHandler(IRepository<Location> repository)
         {
             _repository = repository;
         }
@@ -27,7 +25,7 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.LocationHandlers
             return new GetLocationByIdQueryResult
             {
                 LocationID = values.LocationID,
-                Name = values.Name,
+                Name = values.Name
             };
         }
     }
