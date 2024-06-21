@@ -19,15 +19,21 @@ namespace UdemyCarBook.Persistence.Repositories.BlogRepositories
             _carBookContext = carBookContext;
         }
 
-		public List<Blog> GetAllBlogWithAuthors()
-		{
+        public List<Blog> GetAllBlogsWithAuthors()
+        {
             var values = _carBookContext.Blogs.Include(x => x.Author).ToList();
             return values;
-		}
+        }
 
-		public List<Blog> GetLast3BlogsWithAuthors()
+        public List<Blog> GetBlogByAuthorId(int id)
         {
-            var values = _carBookContext.Blogs.Include(x => x.Author).OrderByDescending(x=> x.BlogID).Take(3).ToList();
+            var values = _carBookContext.Blogs.Include(x => x.Author).Where(y => y.BlogID == id).ToList();
+            return values;
+        }
+
+        public List<Blog> GetLast3BlogsWithAuthors()
+        {
+            var values = _carBookContext.Blogs.Include(x => x.Author).OrderByDescending(x => x.BlogID).Take(3).ToList();
             return values;
         }
     }

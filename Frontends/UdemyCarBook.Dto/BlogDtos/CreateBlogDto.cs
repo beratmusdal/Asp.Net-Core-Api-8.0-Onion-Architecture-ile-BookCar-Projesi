@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace UdemyCarBook.Dto.BlogDtos
 {
-    public class ResultAllBlogsWithAuthorDto
+    public class CreateBlogDto
     {
-        public int blogID { get; set; }
         public string title { get; set; }
         public string authorName { get; set; }
         public object categoryName { get; set; }
@@ -20,6 +19,4 @@ namespace UdemyCarBook.Dto.BlogDtos
         public string AuthorDescription { get; set; }
         public string AuthorImageUrl { get; set; }
     }
-
 }
-

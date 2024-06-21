@@ -20,7 +20,7 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.BlogHandlers
 
 		public async Task<List<GetAllBlogsWithAuthorQueryResult>> Handle(GetAllBlogsWithAuthorQuery request, CancellationToken cancellationToken)
 		{
-			var values = _repository.GetAllBlogWithAuthors();
+			var values = _repository.GetAllBlogsWithAuthors();
 			return values.Select(x => new GetAllBlogsWithAuthorQueryResult
 			{
 				AuthorID = x.AuthorID,
@@ -30,7 +30,9 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.BlogHandlers
 				CreatedDate = x.CreatedDate,
 				Title = x.Title,
 				AuthorName = x.Author.Name,
-				Description = x.Description
+				Description = x.Description,
+				AuthorDescription = x.Author.Description,
+				AuthorImageUrl = x.Author.ImageUrl
 				
 			}).ToList();
 		}
