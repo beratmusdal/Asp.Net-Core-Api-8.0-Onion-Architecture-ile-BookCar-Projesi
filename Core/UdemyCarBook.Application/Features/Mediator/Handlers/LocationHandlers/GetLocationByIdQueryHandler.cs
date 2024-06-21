@@ -11,10 +11,10 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.LocationHandlers
 {
-    public class GetLocationByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
+    public class GetTagCloudByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
     {
         private readonly IRepository<Location> _repository;
-        public GetLocationByIdQueryHandler(IRepository<Location> repository)
+        public GetTagCloudByIdQueryHandler(IRepository<Location> repository)
         {
             _repository = repository;
         }
