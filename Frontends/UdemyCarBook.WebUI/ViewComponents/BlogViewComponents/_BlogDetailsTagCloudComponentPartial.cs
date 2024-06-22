@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using UdemyCarBook.Dto.BlogDtos;
 using UdemyCarBook.Dto.TagCloudDtos;
 
 public class _BlogDetailsTagCloudComponentPartial : ViewComponent
@@ -14,13 +15,13 @@ public class _BlogDetailsTagCloudComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(int id)
     {
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync($"https://localhost:7216/api/TagClouds/GetTagClodByBlogId/" + id);
+        var responseMessage = await client.GetAsync($"https://localhost:7216/api/TagClouds/GetTagCloudByBlogId/" + id);
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<GetByBlogIdTagCloudDto>>(jsonData);
+            var values = JsonConvert.DeserializeObject<GetByBlogIdTagCloudDto>(jsonData);
             return View(values);
         }
-        return View(new List<GetByBlogIdTagCloudDto>());
+        return View();
     }
 }

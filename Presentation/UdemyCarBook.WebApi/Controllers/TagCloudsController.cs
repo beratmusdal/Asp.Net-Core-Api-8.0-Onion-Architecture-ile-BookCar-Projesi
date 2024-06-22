@@ -46,7 +46,7 @@ namespace UdemyCarBook.WebApi.Controllers
             return Ok("Etiket Bulutu başarıyla güncellendi");
         }
         [HttpGet("GetTagCloudByBlogId")]
-        public async Task<IActionResult> GetTagClodByBlogId(int id)
+        public async Task<IActionResult> GetTagCloudByBlogId(int id)
         {
             var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
             return Ok(values);
