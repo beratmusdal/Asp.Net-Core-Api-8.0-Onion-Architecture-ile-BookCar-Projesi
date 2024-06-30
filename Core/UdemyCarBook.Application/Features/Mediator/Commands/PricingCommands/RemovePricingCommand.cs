@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UdemyCarBook.Application.Features.Mediator.Commands.PricingCommands
 {
-    public class RemovePricingCommand : IRequest
+    public class RemovePricingCommand:IRequest
     {
         public int Id { get; set; }
 

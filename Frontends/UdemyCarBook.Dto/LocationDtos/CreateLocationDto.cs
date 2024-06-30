@@ -1,13 +1,12 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.Features.Mediator.Commands.PricingCommands
+namespace UdemyCarBook.Dto.LocationDtos
 {
-    public class CreatePricingCommand : IRequest
+    public class CreateLocationDto
     {
         public string Name { get; set; }
     }

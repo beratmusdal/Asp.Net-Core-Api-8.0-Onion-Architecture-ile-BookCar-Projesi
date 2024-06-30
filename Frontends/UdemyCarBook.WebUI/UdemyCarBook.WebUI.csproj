@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\AdminPricing\CreatePricing.cshtml" />
+    <None Include="Areas\Admin\Views\AdminPricing\Index.cshtml" />
+    <None Include="Areas\Admin\Views\AdminPricing\UpdatePricing.cshtml" />
     <None Include="wwwroot\carbook-master\.DS_Store" />
     <None Include="wwwroot\carbook-master\css\.DS_Store" />
     <None Include="wwwroot\carbook-master\css\bootstrap\.DS_Store" />
