@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UdemyCarBook.Persistence.Context;
 
@@ -11,9 +12,11 @@ using UdemyCarBook.Persistence.Context;
 namespace UdemyCarBook.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20240701143229_mignew")]
+    partial class mignew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -439,32 +442,6 @@ namespace UdemyCarBook.Persistence.Migrations
                     b.ToTable("Pricings");
                 });
 
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.RentACar", b =>
-                {
-                    b.Property<int>("RentACarId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RentACarId"));
-
-                    b.Property<bool>("Available")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LocationID")
-                        .HasColumnType("int");
-
-                    b.HasKey("RentACarId");
-
-                    b.HasIndex("CarID");
-
-                    b.HasIndex("LocationID");
-
-                    b.ToTable("RentACars");
-                });
-
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Service", b =>
                 {
                     b.Property<int>("ServiceID")
@@ -656,25 +633,6 @@ namespace UdemyCarBook.Persistence.Migrations
                     b.Navigation("Blog");
                 });
 
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.RentACar", b =>
-                {
-                    b.HasOne("UdemyCarBook.Domain.Entities.Car", "Car")
-                        .WithMany("RentACars")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("UdemyCarBook.Domain.Entities.Location", "Location")
-                        .WithMany("RentACars")
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Car");
-
-                    b.Navigation("Location");
-                });
-
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.TagCloud", b =>
                 {
                     b.HasOne("UdemyCarBook.Domain.Entities.Blog", "Blog")
@@ -710,8 +668,6 @@ namespace UdemyCarBook.Persistence.Migrations
                     b.Navigation("CarFeatures");
 
                     b.Navigation("CarPricings");
-
-                    b.Navigation("RentACars");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Category", b =>
@@ -722,11 +678,6 @@ namespace UdemyCarBook.Persistence.Migrations
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Feature", b =>
                 {
                     b.Navigation("CarFeatures");
-                });
-
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.Location", b =>
-                {
-                    b.Navigation("RentACars");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Pricing", b =>
