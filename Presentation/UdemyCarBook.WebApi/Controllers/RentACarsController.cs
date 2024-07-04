@@ -16,7 +16,7 @@ namespace UdemyCarBook.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetRentACarListByLocation(int locationID,bool available)
+        public async Task<IActionResult> GetRentACarListByLocation(int locationID, bool available)
         {
             GetRentACarQuery getRentACarQuery = new GetRentACarQuery()
             {
