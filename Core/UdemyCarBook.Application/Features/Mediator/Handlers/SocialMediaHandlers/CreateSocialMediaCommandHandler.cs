@@ -13,21 +13,17 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.SocialMediaHandler
     public class CreatePricingCommandHandler : IRequestHandler<CreateSocialMediaCommand>
     {
         private readonly IRepository<SocialMedia> _repository;
-
         public CreatePricingCommandHandler(IRepository<SocialMedia> repository)
         {
             _repository = repository;
         }
-
         public async Task Handle(CreateSocialMediaCommand request, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new SocialMedia
             {
-                
                 Name = request.Name,
-                Url = request.Url,
                 Icon = request.Icon,
-
+                Url = request.Url
             });
         }
     }

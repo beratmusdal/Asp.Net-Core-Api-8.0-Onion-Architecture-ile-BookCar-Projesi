@@ -13,7 +13,6 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.FeatureHandlers
     public class CreateFeatureCommandHandler : IRequestHandler<CreateFeatureCommand>
     {
         private readonly IRepository<Feature> _repository;
-
         public CreateFeatureCommandHandler(IRepository<Feature> repository)
         {
             _repository = repository;

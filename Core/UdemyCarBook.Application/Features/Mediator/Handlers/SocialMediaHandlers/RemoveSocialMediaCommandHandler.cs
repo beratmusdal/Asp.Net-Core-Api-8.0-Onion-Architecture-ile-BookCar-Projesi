@@ -18,7 +18,6 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.SocialMediaHandler
         {
             _repository = repository;
         }
-
         public async Task Handle(RemoveSocialMediaCommand request, CancellationToken cancellationToken)
         {
             var value = await _repository.GetByIdAsync(request.Id);

@@ -10,14 +10,13 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.LocationHandlers
 {
-    public class UpdateTagCloudCommandHandler : IRequestHandler<UpdateLocationCommand>
+    public class UpdatePricingCommandHandler : IRequestHandler<UpdateLocationCommand>
     {
         private readonly IRepository<Location> _repository;
-        public UpdateTagCloudCommandHandler(IRepository<Location> repository)
+        public UpdatePricingCommandHandler(IRepository<Location> repository)
         {
             _repository = repository;
         }
-
         public async Task Handle(UpdateLocationCommand request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.LocationID);

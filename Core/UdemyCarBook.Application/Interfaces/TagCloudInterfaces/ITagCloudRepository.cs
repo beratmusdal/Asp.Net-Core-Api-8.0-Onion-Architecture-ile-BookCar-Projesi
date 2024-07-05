@@ -9,6 +9,6 @@ namespace UdemyCarBook.Application.Interfaces.TagCloudInterfaces
 {
     public interface ITagCloudRepository
     {
-        List<TagCloud> GetTagCloudsByBlogId(int id);
+        List<TagCloud> GetTagCloudsByBlogID(int id);
     }
 }

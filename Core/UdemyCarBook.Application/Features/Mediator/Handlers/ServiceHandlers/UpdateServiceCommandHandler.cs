@@ -13,12 +13,10 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.ServiceHandlers
     public class UpdatePricingCommandHandler : IRequestHandler<UpdateServiceCommand>
     {
         private readonly IRepository<Service> _repository;
-
         public UpdatePricingCommandHandler(IRepository<Service> repository)
         {
             _repository = repository;
         }
-
         public async Task Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.ServiceID);

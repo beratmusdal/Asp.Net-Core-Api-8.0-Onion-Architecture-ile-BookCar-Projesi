@@ -10,10 +10,10 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.TagCloudHandlers
 {
-    public class CreateTagCloudCommandHandler : IRequestHandler<CreateTagCloudCommand>
+    public class CreatePricingCommandHandler : IRequestHandler<CreateTagCloudCommand>
     {
         private readonly IRepository<TagCloud> _repository;
-        public CreateTagCloudCommandHandler(IRepository<TagCloud> repository)
+        public CreatePricingCommandHandler(IRepository<TagCloud> repository)
         {
             _repository = repository;
         }

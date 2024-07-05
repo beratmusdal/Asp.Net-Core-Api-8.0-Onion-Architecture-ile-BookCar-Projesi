@@ -18,7 +18,6 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.ServiceHandlers
         {
             _repository = repository;
         }
-
         public async Task Handle(RemoveServiceCommand request, CancellationToken cancellationToken)
         {
             var value = await _repository.GetByIdAsync(request.Id);

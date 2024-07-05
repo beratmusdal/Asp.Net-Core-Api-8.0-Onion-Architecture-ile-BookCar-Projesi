@@ -10,10 +10,10 @@ using UdemyCarBook.Domain.Entities;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {
-    public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand>
+    public class CreatePricingCommandHandler : IRequestHandler<CreateAuthorCommand>
     {
         private readonly IRepository<Author> _repository;
-        public CreateAuthorCommandHandler(IRepository<Author> repository)
+        public CreatePricingCommandHandler(IRepository<Author> repository)
         {
             _repository = repository;
         }

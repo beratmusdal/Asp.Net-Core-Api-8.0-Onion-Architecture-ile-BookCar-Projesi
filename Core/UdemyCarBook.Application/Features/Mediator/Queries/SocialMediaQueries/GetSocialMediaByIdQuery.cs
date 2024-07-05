@@ -8,7 +8,7 @@ using UdemyCarBook.Application.Features.Mediator.Results.SocialMediaResults;
 
 namespace UdemyCarBook.Application.Features.Mediator.Queries.SocialMediaQueries
 {
-    public class GetSocialMediaByIdQuery : IRequest<GetSocialMediaByIdQueryResult>
+    public class GetSocialMediaByIdQuery:IRequest<GetSocialMediaByIdQueryResult>
     {
         public int Id { get; set; }
 

@@ -13,7 +13,5 @@ namespace UdemyCarBook.Dto.RentACarDtos
         public string Model { get; set; }
         public decimal Amount { get; set; }
         public string CoverImageUrl { get; set; }
-
-
     }
 }

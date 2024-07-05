@@ -14,15 +14,13 @@ namespace UdemyCarBook.Application.Features.Mediator.Handlers.FooterAddressHandl
     public class GetFooterAddressByIdQueryHandler : IRequestHandler<GetFooterAddressByIdQuery, GetFooterAddressByIdQueryResult>
     {
         private readonly IRepository<FooterAddress> _repository;
-
         public GetFooterAddressByIdQueryHandler(IRepository<FooterAddress> repository)
         {
             _repository = repository;
         }
-
         public async Task<GetFooterAddressByIdQueryResult> Handle(GetFooterAddressByIdQuery request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.Id);
+            var value=await _repository.GetByIdAsync(request.Id);
             return new GetFooterAddressByIdQueryResult
             {
                 Address = value.Address,
