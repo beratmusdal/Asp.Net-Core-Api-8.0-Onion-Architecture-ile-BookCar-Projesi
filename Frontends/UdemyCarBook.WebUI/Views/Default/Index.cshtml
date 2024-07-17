@@ -28,7 +28,7 @@
                 <div class="col-md-12	featured-top">
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
-                            <form method="post" class="request-form ftco-animate bg-primary">
+                            <form method="post" class="request-form ftco-animate bg-dark-grey">
                                 <h2>Şimdi Aracınızı Kiralayın</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Alınacak Lokasyon</label>
@@ -87,13 +87,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p><a href="/CarPricing/Index/" class="btn btn-primary py-3 px-4">Araç Fiyat Listemizi Görün</a></p>
+                                <p><a href="/CarPricing/Index/" class="btn btn-secondary btn-custom py-3 px-4">Araç Fiyat Listemizi Görün</a></p>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
     </section>
+    <style>
+        .bg-dark-grey {
+            background-color: #3c4448; /* Hafif griye yakın siyah */
+        }
+
+    </style>
+    <style>
+        .btn-custom {
+            background-color: #3c4448; /* Yeni renk */
+            border-color: #3c4448; /* Kenar rengi aynı yapalım */
+            color: white; /* Yazı rengini beyaz yapalım */
+        }
+    </style>
+
+
+
 
     @await Component.InvokeAsync("_DefaultLast5CarsWithBrandsComponentPartial")
 

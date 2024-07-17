@@ -10,6 +10,12 @@
     <None Include="Areas\Admin\Views\AdminPricing\CreatePricing.cshtml" />
     <None Include="Areas\Admin\Views\AdminPricing\Index.cshtml" />
     <None Include="Areas\Admin\Views\AdminPricing\UpdatePricing.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardBlogListComponentPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardCarPricingListComponentPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardChart1ComponentPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardChart2ComponentPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardChart3ComponentPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_AdminDashboardStatisticsComponentPartial\Default.cshtml" />
     <None Include="wwwroot\carbook-master\.DS_Store" />
     <None Include="wwwroot\carbook-master\css\.DS_Store" />
     <None Include="wwwroot\carbook-master\css\bootstrap\.DS_Store" />
@@ -25,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
   <ItemGroup>
